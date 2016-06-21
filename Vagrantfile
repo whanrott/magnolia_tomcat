@@ -3,7 +3,7 @@
 Vagrant.configure(2) do |config|
 	config.vm.hostname = 'medlearn.local'
 	config.vm.box = "ubuntu/trusty64"
-	config.vm.network "private_network", ip: "192.168.33.10"
+	config.vm.network "private_network", ip: "192.168.33.15"
 	config.vm.synced_folder "./medlearn/", "/var/lib/tomcat", create: true, owner: 'www-data', group: 'www-data'
 	config.vm.provider "virtualbox" do |vb|
 		vb.name = "medlearn"
