@@ -18,8 +18,11 @@ sudo -u www-data tar zxvf magnolia-community-demo-bundle-5.4.7-tomcat-bundle.tar
 echo "initialise magnolia 4.4.2. NB: there is an error in setenv.sh - the -a switch should be -e"
 sudo -u www-data mv magnolia-4.4.2/apache-tomcat-6.0.29/* .
 
+
 sudo -u www-data sh bin/setenv.sh
 sudo -u www-data sh bin/magnolia_control.sh start
+
+
 
 echo "cleanup tasks"
 sudo updatedb
