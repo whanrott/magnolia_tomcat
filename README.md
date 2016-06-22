@@ -19,8 +19,8 @@ To install a vagrant plugin, run ```vagrant plugin install``` plus the name of t
 * clone this repository to your local machine
 * start it using ```vagrant up```
 
-The script will build apache tomcat v6.0.29. MSDLT instance of Magnolia uses 6.0.35 (at the
-time of writing). 
+The script will build apache tomcat v6.0.29 and Magnolia 4.4.2. The MSDLT instance of Magnolia uses
+Tomcat 6.0.35 and Magnolia 4.4.2 (at the time of writing). 
 
 Your vagrant box is up and the provisioning script has run. Now:
 
@@ -38,10 +38,25 @@ Your vagrant box is up and the provisioning script has run. Now:
 The site will now be available in your browser but the password is salted and so needs resetting using 
 the file which you copied earlier. the web.xml document also needs editing [as set out in the docs][3].
 
+# Next steps
+
 When the steps above are complete, find the site at http://medlearn.local:8080/medlearnAuthor/ and login using
 the default password. Don't forget that when you redeploy the site to live this password will need to be
-reset using the same method.
+reset using the same method. It will then need to be changed to something secure.
+
+Once you have 4.4.2 running, you will need to to a [minor update][4] to at least 4.4.6
+
+The [migration documentation][5] recommends that you install the [Standard Templating Kit (STK)][6] and export to static
+html. You will need the instructions on [how to install a module][7]. I haven't been able to do this so I skipped this
+step.
+
+I'm trying to follow the 4.4 to 4.5 upgrade which appears to mandate Eclipse. There is a [setup guide][8]
 
 [1]:https://www.virtualbox.org/
 [2]:http://www.vagrantup.com/
 [3]:https://documentation.magnolia-cms.com/display/WIKI/Reset+superuser+account
+[4]:https://documentation.magnolia-cms.com/display/DOCS45/Updating
+[5]:
+[6]:https://documentation.magnolia-cms.com/display/DOCS53/Standard+Templating+Kit+module
+[7]:https://documentation.magnolia-cms.com/display/DOCS53/Installing+a+module
+[8]:https://documentation.magnolia-cms.com/display/DEV/Eclipse+setup
