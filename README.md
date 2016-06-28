@@ -46,11 +46,17 @@ reset using the same method. It will then need to be changed to something secure
 
 Once you have 4.4.2 running, you will need to to a [minor update][4] to at least 4.4.6
 
-The [migration documentation][5] recommends that you install the [Standard Templating Kit (STK)][6] and export to static
-html. You will need the instructions on [how to install a module][7]. I haven't been able to do this so I skipped this
-step.
+The [migration documentation][5] recommends that you install the [Standard Templating Kit (STK)][6]
+ and export to static html. You will need the instructions on [how to install a module][7]. I successfully
+installed [STK version 1.3.5][9]. To install this, download the zip/tar file. Extract the contents to the
+folder ```/var/lib/tomcat/webapps/medlearnAuthor/WEB-INF/lib```, start the server and then wait. On my VM it
+takes 1 to 2 minutes. You can track it using tail -f /var/lib/tomcat/logs/catalina.out. When it's ready you
+will see `INFO: Server startup in xxxxx ms```. Now refresh the AdminCentral page until it shows the install process.
+If you get 404 or other 40_ errors for admincentral then check that Tomcat is working: ```http://tomcat.local:8080/```
 
-I'm trying to follow the 4.4 to 4.5 upgrade which appears to mandate Eclipse. There is a [setup guide][8]
+I'm trying to follow the 4.4 to 4.5 upgrade which appears to mandate Eclipse. There is a [setup guide][8].
+
+NB: 
 
 [1]:https://www.virtualbox.org/
 [2]:http://www.vagrantup.com/
@@ -59,4 +65,5 @@ I'm trying to follow the 4.4 to 4.5 upgrade which appears to mandate Eclipse. Th
 [5]:
 [6]:https://documentation.magnolia-cms.com/display/DOCS53/Standard+Templating+Kit+module
 [7]:https://documentation.magnolia-cms.com/display/DOCS53/Installing+a+module
-[8]:https://documentation.magnolia-cms.com/display/DEV/Eclipse+setup
+[8]:https://documentation.magnolia-cms.com/display/DEV/Eclipse+setup8
+[9]:https://nexus.magnolia-cms.com/content/repositories/magnolia.public.releases/info/magnolia/magnolia-standard-templating-kit-bundle/1.3.5/
